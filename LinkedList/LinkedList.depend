@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1601236317 source:c:\users\crahen\documents\c data structures\linkedlist\intlinkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	"intLinkedList.h"
+
+1601236351 c:\users\crahen\documents\c data structures\linkedlist\intlinkedlist.h
+
+1601236276 source:c:\users\crahen\documents\c data structures\linkedlist\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	"intLinkedList.h"
+

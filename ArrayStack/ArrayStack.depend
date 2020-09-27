@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1601239737 source:c:\users\crahen\documents\c data structures\arraystack\main.c
+	<stdio.h>
+	<stdlib.h>
+	"intArrayStack.h"
+
+1601239160 c:\users\crahen\documents\c data structures\arraystack\intarraystack.h
+
+1601239693 source:c:\users\crahen\documents\c data structures\arraystack\intarraystack.c
+	<stdio.h>
+	<stdlib.h>
+	"intArrayStack.h"
+
