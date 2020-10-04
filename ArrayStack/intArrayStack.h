@@ -7,5 +7,6 @@ int pop();
 void printArrayStack();
 void doubleStackCapacity();
 void halveStackCapacity();
+void clearStack();
 
 #endif // INTARRAYSTACK_H_INCLUDED

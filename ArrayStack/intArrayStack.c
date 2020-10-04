@@ -58,3 +58,7 @@ void halveStackCapacity() {
         capacity /= 2;
     }
 }
+
+void clearStack() {
+    free(stack);
+}

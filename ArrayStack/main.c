@@ -69,6 +69,7 @@ int main()
         printf("empty stack");
     }
     printf("\n");
+    clearStack();
 
     return 0;
 }

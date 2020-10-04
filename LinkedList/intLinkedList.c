@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <windows.h>
+#include <stdbool.h>
 #include "intLinkedList.h"
 
 Node *head = NULL;
@@ -82,15 +82,15 @@ void clearLL() {
     }
 }
 
-int containsLL(int item) {
+bool containsLL(int item) {
     Node *temp = head;
     while (temp != NULL) {
         if (temp->data == item) {
-            return 1;
+            return true;
         }
         temp = temp->next;
     }
-    return 0;
+    return false;
 }
 
 int getIndexLL(int item) {

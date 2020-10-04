@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1601823255 source:c:\users\crahen\documents\c data structures\queue\main.c
+	<stdio.h>
+	<stdlib.h>
+	"intQueue.h"
+
+1601823848 c:\users\crahen\documents\c data structures\queue\intqueue.h
+
+1601823848 source:c:\users\crahen\documents\c data structures\queue\intqueue.c
+	<stdio.h>
+	<stdlib.h>
+	"intQueue.h"
+

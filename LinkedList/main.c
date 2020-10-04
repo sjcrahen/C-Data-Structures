@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include "intLinkedList.h"
 
 int main(int argc, char *argv[]) {
@@ -64,6 +65,7 @@ int main(int argc, char *argv[]) {
     printf("\ntest sort: ");
     printLL();
     printf("\n");
+    clearLL();
 
     return 0;
 }

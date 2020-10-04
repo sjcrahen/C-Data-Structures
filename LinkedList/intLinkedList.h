@@ -11,7 +11,7 @@ void printLL();
 void insertAtEndLL(int newItem);
 int removeFromHeadLL();
 void clearLL();
-int containsLL(int item);
+bool containsLL(int item);
 int getIndexLL(int item);
 void removeItemLL(int item);
 void sortLL();
