@@ -7,13 +7,18 @@ typedef struct node {
     int data;
 } Node;
 
-void printLL();
-void insertAtEndLL(int newItem);
-int removeFromHeadLL();
-void clearLL();
-bool containsLL(int item);
-int getIndexLL(int item);
-void removeItemLL(int item);
-void sortLL();
+typedef struct intLinkedList {
+    Node *head;
+    int size;
+} IntLL;
+
+void printLL(IntLL *list);
+void insertAtEndLL(int newItem, IntLL *list);
+int removeFromHeadLL(IntLL *list);
+void clearLL(IntLL *list);
+bool containsLL(int item, IntLL *list);
+int getIndexLL(int item, IntLL *list);
+void removeItemLL(int item, IntLL *list);
+void sortLL(IntLL *list);
 
 #endif // INTLINKEDLIST_H_INCLUDED

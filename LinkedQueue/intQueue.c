@@ -2,69 +2,65 @@
 #include <stdlib.h>
 #include "intQueue.h"
 
-Node *front = NULL;
-Node *back = NULL;
-int size = 0;
-
-void printLinkedQ() {
-    if (front == NULL) {
-        printf("[ ] size: %d", size);
+void printLinkedQ(IntegerQueue *q) {
+    if (q->front == NULL) {
+        printf("[ ] size: %d", q->size);
     } else {
-        Node *temp = front;
+        Node *temp = q->front;
         printf("[ %d", temp->data);
         while (temp->next != NULL) {
             temp = temp->next;
             printf(", %d", temp->data);
         }
-        printf(" ] size: %d", size);
+        printf(" ] size: %d", q->size);
     }
 }
 
-void enqueueLinkedQ(int newItem) {
+void enqueueLinkedQ(int newItem, IntegerQueue *q) {
     Node *newNode = (Node *)malloc(sizeof(Node));
     newNode->data = newItem;
     newNode->next = NULL;
-    if (size == 0) {
-        front = newNode;
-        back = newNode;
+    if (q->size == 0) {
+        q->front = newNode;
+        q->back = newNode;
     } else {
-        back->next = newNode;
-        back = newNode;
+        q->back->next = newNode;
+        q->back = newNode;
     }
-    size++;
+    q->size++;
 }
 
-int peekLinkedQ() {
-    if (size == 0) return -1;
-    else return front->data;
+int peekLinkedQ(IntegerQueue *q) {
+    if (q->size == 0) return -1;
+    else return q->front->data;
 }
 
-int dequeueLinkedQ() {
+int dequeueLinkedQ(IntegerQueue *q) {
     int itemToReturn = -1;
-    if (size == 0) {
+    if (q->size == 0) {
         return -1;
-    } else if (size == 1) {
-        itemToReturn = front->data;
-        Node *nodeToFree = front;
-        front = NULL;
-        back = NULL;
+    } else if (q->size == 1) {
+        itemToReturn = q->front->data;
+        Node *nodeToFree = q->front;
+        q->front = NULL;
+        q->back = NULL;
         free(nodeToFree);
-        size--;
+        q->size--;
     } else {
-        itemToReturn = front->data;
-        Node *nodeToFree = front;
-        front = nodeToFree->next;
+        itemToReturn = q->front->data;
+        Node *nodeToFree = q->front;
+        q->front = nodeToFree->next;
         nodeToFree->next = NULL;
         free(nodeToFree);
-        size--;
+        q->size--;
     }
     return itemToReturn;
 }
 
-void clearLinkedQ() {
-    if (size > 0) {
-        while (front != NULL) {
-            dequeueLinkedQ();
+void clearLinkedQ(IntegerQueue *q) {
+    if (q->size > 0) {
+        while (q->front != NULL) {
+            dequeueLinkedQ(q);
         }
     }
 }

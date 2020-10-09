@@ -3,67 +3,64 @@
 #include <stdbool.h>
 #include "intLinkedList.h"
 
-Node *head = NULL;
-int size = 0;
-
-void printLL() {
-    if (size == 0) printf("List: [ ] size: %d", size);
+void printLL(IntLL *list) {
+    if (list->size == 0) printf("List: [ ] size: %d", list->size);
     else {
-        Node *temp = head;
+        Node *temp = list->head;
         printf("List: [ %d", temp->data);
         while (temp->next != NULL) {
             temp = temp->next;
             printf(", %d", temp->data);
         }
-        printf(" ] size: %d", size);
+        printf(" ] size: %d", list->size);
     }
 }
 
-void insertAtEndLL(int newItem) {
+void insertAtEndLL(int newItem, IntLL *list) {
     Node *newNode = (Node *)malloc(sizeof(Node));
     newNode->data = newItem;
     newNode->next = NULL;
-    if (size == 0) {
-        head = newNode;
+    if (list->size == 0) {
+        list->head = newNode;
         newNode->previous = NULL;
     } else {
-        Node *temp = head;
+        Node *temp = list->head;
         while (temp->next != NULL)
             temp = temp->next;
         temp->next = newNode;
         newNode->previous = temp;
     }
-    size++;
+    list->size++;
 }
 
-int removeFromHeadLL() {
+int removeFromHeadLL(IntLL *list) {
     int item = -1;
-    if (size == 0) {
+    if (list->size == 0) {
         printf("Cannot remove from an empty list");
     } else {
-        item = head->data;
-        Node *temp = head;
-        if (head->next == NULL) {
-            head = NULL;
+        item = list->head->data;
+        Node *temp = list->head;
+        if (list->head->next == NULL) {
+            list->head = NULL;
         } else {
-            head = head->next;
-            head->previous = NULL;
+            list->head = list->head->next;
+            list->head->previous = NULL;
         }
         free(temp);
-        size--;
+        list->size--;
     }
     return item;
 }
 
-void removeItemLL(int item) {
-    Node *nodeToRemove = head;
+void removeItemLL(int item, IntLL *list) {
+    Node *nodeToRemove = list->head;
     while (nodeToRemove != NULL && nodeToRemove->data != item) {
         nodeToRemove = nodeToRemove->next;
     }
     if (nodeToRemove == NULL) {
         printf("This list DOES NOT contain %d", item);
-    } else if (nodeToRemove == head) {
-        removeFromHeadLL();
+    } else if (nodeToRemove == list->head) {
+        removeFromHeadLL(list);
         printf("%d was removed from the list", item);
     } else {
         if (nodeToRemove->previous != NULL)
@@ -71,19 +68,19 @@ void removeItemLL(int item) {
         if (nodeToRemove->next != NULL)
             nodeToRemove->next->previous = nodeToRemove->previous;
         free(nodeToRemove);
-        size--;
+        list->size--;
         printf("%d was removed from the list", item);
     }
 }
 
-void clearLL() {
-    while (head != NULL) {
-        removeFromHeadLL();
+void clearLL(IntLL *list) {
+    while (list->head != NULL) {
+        removeFromHeadLL(list);
     }
 }
 
-bool containsLL(int item) {
-    Node *temp = head;
+bool containsLL(int item, IntLL *list) {
+    Node *temp = list->head;
     while (temp != NULL) {
         if (temp->data == item) {
             return true;
@@ -93,9 +90,9 @@ bool containsLL(int item) {
     return false;
 }
 
-int getIndexLL(int item) {
+int getIndexLL(int item, IntLL *list) {
     int index = 0;
-    Node *temp = head;
+    Node *temp = list->head;
     while (temp != NULL) {
         if (temp->data == item) {
             return index;
@@ -106,9 +103,9 @@ int getIndexLL(int item) {
     return index;
 }
 
-void sortLL() {
-    if (size > 1) {
-        Node *temp = head->next;
+void sortLL(IntLL *list) {
+    if (list->size > 1) {
+        Node *temp = list->head->next;
         while (temp != NULL){
             if (temp->data < temp->previous->data) {
                 int dataToInsert = temp->data;
