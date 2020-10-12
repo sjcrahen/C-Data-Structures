@@ -4,7 +4,7 @@
 
 int main() {
 
-    IntegerQueue q, *qp;
+    Queue q, *qp;
     q.front = NULL;
     q.back = NULL;
     q.size = 0;

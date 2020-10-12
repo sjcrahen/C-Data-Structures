@@ -11,15 +11,19 @@
 	<stdlib.h>
 	"intQueue.h"
 
-1602272111 source:c:\users\crahen\documents\c data structures\linkedqueue\main.c
+1602341083 source:c:\users\crahen\documents\c data structures\linkedqueue\main.c
 	<stdio.h>
 	<stdlib.h>
 	"intQueue.h"
 
-1602271863 c:\users\crahen\documents\c data structures\linkedqueue\intqueue.h
+1602340516 c:\users\crahen\documents\c data structures\linkedqueue\intqueue.h
+	"linkedListNodeInt.h"
 
-1602271946 source:c:\users\crahen\documents\c data structures\linkedqueue\intqueue.c
+1602345709 source:c:\users\crahen\documents\c data structures\linkedqueue\intqueue.c
 	<stdio.h>
 	<stdlib.h>
 	"intQueue.h"
+	"linkedListNodeInt.h"
+
+1602340309 c:\users\crahen\documents\c data structures\linkedqueue\linkedlistnodeint.h
 

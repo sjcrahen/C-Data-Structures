@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1602463325 source:c:\users\crahen\documents\c data structures\binarysearchtree\main.c
+	<stdio.h>
+	<stdlib.h>
+	"intBST.h"
+	"queue.h"
+
+1602459614 c:\users\crahen\documents\c data structures\binarysearchtree\intbst.h
+
+1602448616 c:\users\crahen\documents\c data structures\binarysearchtree\queue.h
+	"intBST.h"
+
+1602457471 source:c:\users\crahen\documents\c data structures\binarysearchtree\queue.c
+	<stdio.h>
+	<stdlib.h>
+	"intBST.h"
+	"queue.h"
+
+1602463451 source:c:\users\crahen\documents\c data structures\binarysearchtree\intbst.c
+	<stdio.h>
+	<stdlib.h>
+	"intBST.h"
+	"queue.h"
+
